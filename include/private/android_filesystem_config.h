@@ -186,10 +186,18 @@ static struct fs_path_config android_dirs[] = {
 */
 static struct fs_path_config android_files[] = {
     { 00440, AID_ROOT,      AID_SHELL,     "system/etc/init.goldfish.rc" },
-    { 00550, AID_ROOT,      AID_SHELL,     "system/etc/init.goldfish.sh" },
+    { 00555, AID_ROOT,      AID_SHELL,     "system/etc/init.goldfish.sh" },
     { 00440, AID_ROOT,      AID_SHELL,     "system/etc/init.trout.rc" },
     { 00550, AID_ROOT,      AID_SHELL,     "system/etc/init.ril" },
     { 00550, AID_ROOT,      AID_SHELL,     "system/etc/init.testmenu" },
+#if defined (HUAWEI_QCOM_PALTFORM)
+    { 00555, AID_ROOT,      AID_SHELL,     "system/etc/init.qcom.coex.sh" },
+    { 00555, AID_ROOT,      AID_SHELL,     "system/etc/init.qcom.post_boot.sh" },
+    { 00555, AID_ROOT,      AID_SHELL,     "system/etc/init.qcom.wifi.sh" },
+    { 00555, AID_ROOT,      AID_SHELL,     "system/etc/init.qcom.bt.sh" },
+    { 00555, AID_ROOT,      AID_SHELL,     "system/etc/init.qcom.fm.sh" },
+    { 00555, AID_ROOT,      AID_SHELL,     "system/etc/init.qcom.sdio.sh" },
+#endif
     { 00550, AID_DHCP,      AID_SHELL,     "system/etc/dhcpcd/dhcpcd-run-hooks" },
     { 00440, AID_BLUETOOTH, AID_BLUETOOTH, "system/etc/dbus.conf" },
     { 00440, AID_BLUETOOTH, AID_BLUETOOTH, "system/etc/bluetooth/main.conf" },
